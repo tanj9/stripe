@@ -7,7 +7,7 @@ geek = Category.create!(name: 'geek')
 kids = Category.create!(name: 'kids')
 
 puts 'Creating teddies...'
-Teddy.create!(sku: 'original-teddy-bear', name: 'Teddy bear', category: kids, photo_url: 'https://miro.medium.com/v2/resize:fit:500/1*WXXnl4mWy6PxpkSkEqrGkQ.jpeg')
-Teddy.create!(sku: 'jean-mimi', name: 'Jean-Michel - Le Wagon', category: geek, photo_url: 'https://pbs.twimg.com/media/B_AUcKeU4AE6ZcG.jpg:large')
-Teddy.create!(sku: 'octocat',   name: 'Octocat -  GitHub',      category: geek, photo_url: 'https://cdn-ak.f.st-hatena.com/images/fotolife/s/suzumidokoro/20160413/20160413220730.jpg')
+Teddy.create!(sku: 'original-teddy-bear', name: 'Teddy bear', category: kids, photo_url: 'https://miro.medium.com/v2/resize:fit:500/1*WXXnl4mWy6PxpkSkEqrGkQ.jpeg', price_cents: 950)
+Teddy.create!(sku: 'jean-mimi', name: 'Jean-Michel - Le Wagon', category: geek, photo_url: 'https://pbs.twimg.com/media/B_AUcKeU4AE6ZcG.jpg:large', price_cents: 1200)
+Teddy.create!(sku: 'octocat',   name: 'Octocat -  GitHub',      category: geek, photo_url: 'https://cdn-ak.f.st-hatena.com/images/fotolife/s/suzumidokoro/20160413/20160413220730.jpg', price_cents: 452)
 puts 'Finished!'

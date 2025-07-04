@@ -6,7 +6,7 @@
     <div class="col-span-full md:col-span-6">
       <h1 class="text-3xl mb-8"><%= @teddy.name %></h1>
       <p>Some awesome description of our amazing teddy.</p>
-      <p>$$$</p>
+      <p>Amount: <%= '%.2f' % @teddy.price_cents.fdiv(100) %> €</p>
     </div>
   </div>
 </div>
