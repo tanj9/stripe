@@ -1,0 +1,17 @@
+<div class="container">
+  <h1 class="text-3xl">Teddies</h1>
+  <div class="grid grid-cols-3 gap-8 mt-8">
+    <% @teddies.each do |teddy| %>
+      <div class="col-span-1 bg-white">
+        <div class="flex flex-col justify-start text-2xl font-bold rounded-lg shadow-xl overflow-hidden">
+          <%= image_tag teddy.photo_url , class: "w-full h-100 object-cover" %>
+          <div class="flex flex-col p-8 gap-y-4 items-start">
+            <h2 class="text-2xl"><%= teddy.name %></h2>
+            <p class="text-md font-normal"><%= teddy.category.name %></p>
+            <%= link_to "More details", teddy_path(teddy), class: "text-white bg-blue-700 rounded-md p-3 font-medium" %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

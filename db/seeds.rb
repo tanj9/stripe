@@ -1,6 +1,6 @@
 puts 'Cleaning database...'
-Teddy.destroy_all
-Category.destroy_all
+Teddy.destroy_all if Rails.env.development?
+Category.destroy_all if Rails.env.development?
 
 puts 'Creating categories...'
 geek = Category.create!(name: 'geek')
