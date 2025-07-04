@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_07_04_094334) do
+ActiveRecord::Schema[8.0].define(version: 2025_07_04_110552) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -18,6 +18,19 @@ ActiveRecord::Schema[8.0].define(version: 2025_07_04_094334) do
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "orders", force: :cascade do |t|
+    t.string "state"
+    t.string "teddy_sku"
+    t.integer "amount_cents"
+    t.string "checkout_session_id"
+    t.bigint "user_id", null: false
+    t.bigint "teddy_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["teddy_id"], name: "index_orders_on_teddy_id"
+    t.index ["user_id"], name: "index_orders_on_user_id"
   end
 
   create_table "sessions", force: :cascade do |t|
@@ -48,6 +61,8 @@ ActiveRecord::Schema[8.0].define(version: 2025_07_04_094334) do
     t.index ["email_address"], name: "index_users_on_email_address", unique: true
   end
 
+  add_foreign_key "orders", "teddies"
+  add_foreign_key "orders", "users"
   add_foreign_key "sessions", "users"
   add_foreign_key "teddies", "categories"
 end
